@@ -1,0 +1,120 @@
+<div class="general">
+  <div class="contenedor">
+    <div class="contenedor-interno">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb gov-co-breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="#">Inicio</a><span>></span>
+          </li>
+          <li class="breadcrumb-item">
+            <a href="#">Trámites y servicios</a><span>></span>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">Consulta CIIU</li>
+        </ol>
+      </nav>
+      <div class="informacion">
+        <h1 class="Headline-xl">Consulta de trámites por<br>actividad económica - CIIU</h1>
+        <h2 class="headline-l">Esta consulta le permite identificar los trámites asociados a la actividad <br>económica
+          CIIU de su empresa o emprendimiento</h2>
+      </div>
+    </div>
+    <section class="contenido-general">
+      <div class="mensaje">
+        <p>La información de códigos CIIU está siendo cargada de manera gradual por lo que estará disponible
+          inicialmente
+          para los municipios que se vengan incorporando.
+        </p>
+      </div>
+      <div class="container m-0 p-0">
+        <div class="row">
+          <div class="col contenedor-select">
+            <p>Departamento</p>
+            <select class="form-select select" aria-label="Default select example" (change)="capturar($event)">
+              <option *ngFor="let dep of resultados" value={{dep.depCodigo}}> {{dep.depNombre}} </option>
+            </select>
+            <!-- <button (click)="buscar()" >Hola</button> -->
+          </div>
+          <div class="col contenedor-select">
+            <p>Municipio</p>
+            <select class="form-select select" aria-label="Default select example">
+              <option *ngFor="let mun of municipios" value={{mun.munCodigo}}> {{mun.munNombre}} </option>
+            </select>
+          </div>
+          <div class="col-6 contenedor-select">
+            <p>Busca actividad económica</p>
+            <select name="actividades" class="search-select select">
+              <option value="1">4111 | Construcción de edificios</option>
+              <option value="2">4112 | Construcción de edificios no residenciales</option>
+              <option value="3">2511 | Fabricación de productos metálicos para uso estructural</option>
+              <option value="4">1630 | Fabricación de partes y piezas de madera, de carpintería y</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contendor-tabla">
+          <div class="seleccion">
+            <p>Resultados pág.</p>
+            <select class="escoger" placeholder="Escoger">
+              <option value="1">10</option>
+              <option value="2">25</option>
+              <option value="3">50</option>
+            </select>
+          </div>
+          <table class="tabla">
+            <thead class="titulo-tabla">
+              <tr>
+                <th><i class="fa-solid fa-arrow-down"></i>Código</th>
+                <th><i class="fa-solid fa-arrow-down"></i>Nombre de la actividad</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tr>
+              <th>4111</th>
+              <th>Construcción de edificios residenciales</th>
+              <th>
+                <a href="#">VER NOTA</a>
+                <a href="#">VER TRÁMITES</a>
+              </th>
+            </tr>
+            <tr>
+              <th>4112</th>
+              <th>Construcción de edificios no residenciales</th>
+              <th>
+                <a href="#">VER NOTA</a>
+                <a href="#">VER TRÁMITES</a>
+              </th>
+            </tr>
+            <tr>
+              <th>1630</th>
+              <th>Fabricación de partes y piezas de madera, de carpínteria y ebanistería para la</th>
+              <th>
+                <a href="#">VER NOTA</a>
+                <a href="#">VER TRÁMITES</a>
+              </th>
+            </tr>
+            <tr>
+              <th>1630</th>
+              <th>Fabricación de productos metálicos para uso estructural</th>
+              <th>
+                <a href="#">VER NOTA</a>
+                <a href="#">VER TRÁMITES</a>
+              </th>
+            </tr>
+            <tr>
+              <th colspan="3">
+                <nav aria-label="Page navigation example" class="pager-govco">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+                  </ul>
+                </nav>
+              </th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
